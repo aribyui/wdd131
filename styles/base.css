@@ -1,10 +1,12 @@
-:root {
+:root {  
   --color1: #252422;
+  --color1Transparent: #25242268;
   --color2: #808f85;
   --color3: #CCC5B9;
-  --color4: #EB5E28;
-  --color5: #F7FF58;
-  --color6: #FFF;
+  --color4: #D8D8D5;
+  --color5: #EB5E28;
+  --color6: #F7FF58;
+  --color7: #FFF;
   --headings: 'Protest Riot', sans-serif;
   --content: 'Yusei Magic', sans-serif;
 }
@@ -17,13 +19,13 @@
 }
 
 h1, h2,h3 {
-  font-family: var(--headings);
+  font-family: var(--content);
   letter-spacing: 1.5px;
 }
 
 p, a, img, figcaption {
   font-family: var(--content);
-  font-size: 1.15rem;
+  font-size: 1.17rem;
 }
 
 header, footer {
@@ -31,15 +33,9 @@ header, footer {
   color: var(--color1); 
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-header h1 { 
-  text-align: center; 
-  padding: 1rem;
+header h1 {
+  padding:1rem;
+  text-align: center;
 }
 
 nav ul {
@@ -49,93 +45,150 @@ nav ul {
 
 nav a {
   display: block;
-  color: var(--color5);
-  text-decoration: none;    
-  text-align: center;
+  color: var(--color7);
   padding: 1rem;
+  text-align: center;
+  text-decoration: none;  
 }
 
-nav a:hover {
-  background-color: var(--color5);
-  color: var(--color1);
+nav a:hover {  
+  color: var(--color6);
+  text-decoration: underline;
 }
 
 main {
-  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  padding: 1rem;
 }
 
-/* card - section 1 */
+/* card 1*/
 .card {
-  border: 1px solid var(--color2);
+  background-color: var(--color4);
+  border: 1px solid var(--color1Transparent);
   border-radius: 10px;
 }
 
-.card h2:first-child {
+.card h2:nth-child(1) {
+  color: var(--color6);
   background-color: var(--color1);
-  color: var(--color5);
-  padding: 1rem;
   border-radius: 10px 10px 0 0;
+  padding: 1rem;
+  text-align: center;
 }
 
-.card-content {
+#aboutme,
+#country-description 
+{
+  color: var(--color1);
   padding: 1rem;
 }
 
-/* card - section 2 */
-.card:nth-child(2) .card-content {
-  display: flex;
-  justify-content: center;
+#aboutme p {
+  margin-bottom: 1rem;
 }
 
-.card:nth-child(2) .card-content a {
-  color: var(--color1); 
-} 
+#portrait {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 7rem;
+  background-color: var(--color7);
+}
 
-/* footer */
-footer {
+.card h2 {
+  text-align: center;
+  color: var(--color1); 
+}
+
+.card hr {
+  border: 1px solid var(--color1Transparent);
+  display: block;
+  margin: 0.5rem auto 1rem auto;
+  width: 90%;
+}
+
+#flag {
+  display: block;
+  margin: 0 auto 0.5rem auto;
+  width: 14rem;
+}
+
+#flag + figcaption {
+  text-align: center;
+  font-size: medium;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* card 2*/
+.web-resources {  
+  padding: 1rem;
+}
+
+.web-resources ul {
+  list-style-position: inside;
+}
+
+.web-resources a {
   color: var(--color1);
+}
+
+footer {
   text-align: center;
   padding: 1rem;
+}
+
+footer span:first-child {
+  font-size: 1.8rem;
+  vertical-align: bottom;
 }
 
 /*** larger view ***/
 @media screen and (min-width: 65em) {
   body {
     display: grid;
-    /* grid-template: 160px auto 100px / auto auto; */
-    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    height: 50vh;
   }
-  header {
-    grid-column: 1/3;
+  header, footer {
+    background-color: var(--color2);
+    color: var(--color1);
+    grid-column: 1/3; 
   }
-  header h1 {
-    padding: 2rem;
-  }
-  main {
-    grid-column: 1/3;
-  }
-  footer {
-    grid-column: 1/3;
-  }
-  nav ul {
+  nav ul {   
     display: flex;
   }
   nav li {
-    flex: 1 1 100%;
-  }
-   /* main {    
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  #about-me,
+    flex: 1 1 100%;  
+  } 
+  main {    
+    grid-column: 1/3;
+    max-width: 1100px;
+    margin: 0 auto;  
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  } 
+  #aboutme, 
   #country-description
   {
     display: flex;
-    align-items: center;
-  }  */
+    align-items: center;    
+  }
+  #aboutme p, 
+  #portrait
+  {
+    margin-bottom: 0;
+  }
+  .card hr {
+    width: 80%;
+    
+  }
+  #aboutme p,
+  #flag
+  {
+    margin-right: 1rem;
+  } 
   footer {
     display: flex;
     flex-direction: column;
