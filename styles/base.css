@@ -103,7 +103,7 @@ main {
   margin: 0 auto 1rem auto;
   width: 7rem;
   background-color: var(--color3);
-  border: 2px solid var(--transparent);
+  border: 2px solid var(--color1);
   border-radius: 10px;
 }
 
@@ -113,7 +113,7 @@ main {
 }
 
 .card hr {
-  border: 1px solid var(--transparent);
+  border: 1px solid var(--accent2);
   display: block;
   margin: 0.5rem auto 1rem auto;
   width: 90%;
@@ -143,11 +143,19 @@ main {
 
 .web-resources li::marker {  
   color: var(--accent2);
+  font-size: 20px;
 }
 
 .web-resources a {
-  color: var(--color1);
-}
+  color: var(--color1);  
+  text-decoration: none;
+} 
+
+.web-resources a:hover {  
+  text-decoration: underline; 
+  transition: 0.3s ease-in-out;
+} 
+
 
 footer {
   background-color: var(--color1);
@@ -166,8 +174,14 @@ footer span:first-child {
 }
 
 #lastModified {
-  color: var(--accent1);
-  text-shadow: 0 0 10px var(--accent1);  
+  color: var(--accent1);  
+}
+
+header h1:hover,
+.card h2:nth-child(1):hover,
+#lastModified:hover 
+{ 
+  text-shadow: 0 0 10px var(--accent1); 
 }
 
 /*** larger view ***/
@@ -221,7 +235,7 @@ footer span:first-child {
   .web-resources {
     position: absolute;
     top: 38%;  
-    transform: translate(-50% -50%);
+    /* transform: translate(-50% -50%); */
   }
   footer {
     display: flex;
