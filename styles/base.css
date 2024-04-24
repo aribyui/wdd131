@@ -98,6 +98,19 @@ main {
   margin-bottom: 1rem;
 }
 
+#aboutme p a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#aboutme p a:hover {
+  text-decoration: underline;
+}
+
+#aboutme p a:visited {
+  color: var(--color1);
+}
+
 #portrait {
   display: block;
   margin: 0 auto 1rem auto;
@@ -144,6 +157,7 @@ main {
 .web-resources li::marker {  
   color: var(--accent2);
   font-size: 20px;
+  font-weight: 700;
 }
 
 .web-resources a {
