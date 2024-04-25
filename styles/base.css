@@ -192,6 +192,7 @@ footer p:first-child {
 
 header h1:hover,
 .card h2:nth-child(1):hover,
+.fa-code:hover,
 #lastModified:hover 
 { 
   text-shadow: 0 0 10px var(--accent1); 
